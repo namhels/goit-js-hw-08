@@ -11,6 +11,6 @@ const onTimeUpdate = function (event) {
   storage.save(SAVED_TIME, event.seconds);
 };
 
-player.setCurrentTime(storage.get(SAVED_TIME));
+player.setCurrentTime(storage.get(SAVED_TIME) || 0);
 
 player.on('timeupdate', throttle(onTimeUpdate, 1000));
